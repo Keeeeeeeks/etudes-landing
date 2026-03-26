@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-ground: #161616;
+  --color-surface: #1e1e1e;
+  --color-sage: #4a7a4a;
+  --color-deep: #2d4a2d;
+  --color-gold: #e8c87a;
+  --color-cream: #fafaf8;
+  --color-muted: #aaaaaa;
+  --color-border: #2a2a2a;
+  --color-dev-bg: #0d1117;
+  --color-dev-border: #30363d;
+  --color-dev-text: #c9d1d9;
+  --color-mint: #e8f0e8;
+  --color-mint-sub: #9ab09a;
+
+  /* Fonts */
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-ground);
+  color: var(--color-cream);
+  min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  background: var(--color-cream);
+  color: var(--color-ground);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  z-index: 50;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  top: 12px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Flip mechanic */
+.scene {
+  perspective: 2000px;
+  min-height: 100vh;
+}
+
+.flipper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flipper {
+    transition-duration: 0.01ms;
+  }
+}
+
+.scene.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.face {
+  width: 100%;
+  min-height: 100vh;
+  backface-visibility: hidden;
+}
+
+.face-front {
+  position: relative;
+}
+
+.face-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: rotateY(180deg);
+  background: var(--color-dev-bg);
+  padding: 40px 20px;
+}
+
+@media (max-width: 700px) {
+  .face-back {
+    padding: 32px 16px;
+  }
+}

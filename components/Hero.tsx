@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PhoneMockup from "./PhoneMockup";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -52,6 +53,16 @@ export default function Hero() {
           </svg>
           Skill Link
         </a>
+      </div>
+      <div className="mb-4 flex justify-center">
+        <Image
+          src="/pip-character.png"
+          alt="Pip mascot"
+          width={220}
+          height={204}
+          className="h-auto w-[160px] max-[420px]:w-[132px]"
+          priority
+        />
       </div>
       <PhoneMockup />
       <div className="text-[11px] text-[#666] mt-3">

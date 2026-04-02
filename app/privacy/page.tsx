@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/siteConfig";
+import BrandMark from "@/components/BrandMark";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -13,11 +14,7 @@ export default function Privacy() {
     <div className="min-h-screen bg-ground text-cream">
       <nav className="flex items-center px-6 py-3.5 border-b border-border">
         <Link href="/" className="flex items-center gap-2.5 no-underline text-cream">
-          <svg viewBox="0 0 28 28" fill="none" className="w-7 h-7" aria-hidden="true" focusable="false">
-            <circle cx="14" cy="14" r="14" fill="#4a7a4a" />
-            <path d="M14 6c0 0-3 4-3 8s1.5 6 3 8c1.5-2 3-4 3-8s-3-8-3-8z" fill="#fafaf8" opacity="0.9" />
-            <path d="M10 14c2-1 6-1 8 0" stroke="#fafaf8" strokeWidth="1.2" fill="none" opacity="0.6" />
-          </svg>
+          <BrandMark />
           <span className="font-extrabold text-lg tracking-tight">pip</span>
         </Link>
       </nav>

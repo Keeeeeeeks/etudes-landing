@@ -1,18 +1,12 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
+import BrandMark from "./BrandMark";
 
 export default function Footer() {
   return (
     <footer className="text-center px-6 py-6 border-t border-border text-xs text-[#666]">
       <div className="flex items-center justify-center gap-1.5 mb-1.5">
-        <svg width="16" height="16" viewBox="0 0 28 28" fill="#666" aria-hidden="true" focusable="false">
-          <circle cx="14" cy="14" r="14" />
-          <path
-            d="M14 6c0 0-3 4-3 8s1.5 6 3 8c1.5-2 3-4 3-8s-3-8-3-8z"
-            fill="#0e0e0e"
-            opacity="0.5"
-          />
-        </svg>
+        <BrandMark className="w-4 h-4" variant="muted" />
         <span>Made by Resoworks</span>
       </div>
       <div>
